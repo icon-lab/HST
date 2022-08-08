@@ -70,7 +70,7 @@ class PatchPartition(nn.Module):
     """
     
     def __init__(self, img_size=224, h=4, img_channel=3, d=96):
-        super(PatchPartition, self).__init__()
+        super(PatchPartition, self).__init__()      
         self.img_size = (img_size, img_size)
         self.patch_size = (h, h) 
         self.patch_res = (self.img_size[0]//self.patch_size[0], self.img_size[1]//self.patch_size[1])
