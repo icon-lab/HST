@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 This is the training pipeline for the AST baseline.
-
+For a detailed information about AST, please check the original implementation https://github.com/YuanGongND/ast.
 """
 from models import ast_models
 import sys
