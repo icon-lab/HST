@@ -1,7 +1,5 @@
 import os
 import sys
-basepath = os.path.dirname(os.path.dirname(sys.path[0]))
-sys.path.append(basepath)
 import argparse
 import torch
 import torchvision
@@ -19,6 +17,8 @@ import torchvision.transforms as T
 from sklearn.metrics import roc_auc_score
 from model import hst_model as Model
 from model import configs
+import warnings
+warnings.simplefilter("ignore")
 
 def seed_env(seed):
     np.random.seed(seed)
@@ -26,7 +26,6 @@ def seed_env(seed):
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
-    #torch.backends.cudnn.benchmark = False
     os.environ['PYTHONHASHSEED'] = str(seed)
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -223,6 +222,7 @@ if args.pretrained is True:
 
 HST = Net(hst_model)
 model = to_device(HST, device)
+print("Start training and testing!")
 history = [evaluate(model, val_dl)]
 history, val_loss, val_acc,  precisions, recalls, F1s, AUCs = fit_one_cycle(epochs, max_lr, model, train_dl, val_dl, grad_clip=grad_clip, weight_decay=weight_decay, opt_func=opt_func)
 best_epoch = np.argmax(AUCs)
