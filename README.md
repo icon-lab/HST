@@ -22,7 +22,7 @@ The following links contain pre-trained HST model weights on ImageNet:
 - [HST-Base](https://drive.google.com/file/d/1jol7869ixS77FyoAXzb_m3oJGTtKuOVO/view?usp=sharing)
 - [HST-Large](https://drive.google.com/file/d/1kEQeLNnOH2yWTFp02TzFQqB1UiqtGmts/view?usp=sharing)
 
-After downloading the weights, please align them as ```HST/model/imagenet_weights/hst_base_imagenet.pth```
+After downloading the weights, please align them as ```HST/model/imagenet_weights/hst_base_imagenet.pth``` for a smooth process.
 
 ## Dataset
 The dataset in the paper [Exploring Automatic Diagnosis of COVID-19 from Crowdsourced Respiratory Sound Data](https://arxiv.org/abs/2006.05919) is used in this work. Their dataset is not publicly available but can be released for research purposes as said [here](https://github.com/cam-mobsys/covid19-sounds-kdd20).
