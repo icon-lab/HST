@@ -52,7 +52,7 @@ The audio files in the folders mentioned above are converted to spectrograms by 
   ├── healthy
 ```
 
-# Train and test
+## Train and test
 To train and test the chosen model with the determined seed, follow:
 ```
 cd HST
@@ -60,14 +60,14 @@ python3 train.py --dataset "/data/task1_cough/train_test"  --model "hst_base"  -
 ```
 In our paper, HST is trained with 10 different seed for 10-fold like cross-validation. The results are averaged and reported in the paper.
 
-# Demo
+## Demo
 An audio file of a respiratory sound can be tested with ```demo.py```. The HST-Base model trained with task 2 cough modality data with seed 1 can be downloaded from [this link](https://drive.google.com/file/d/1O24zS1q2dFuPUTwtKjE7KeD2aWeLX9Q0/view?usp=sharing).
 ```
 python3 demo.py --audio_path "sample_resp_sound"
 ```
 Result is printed as "healthy" or "covid".
 
-# Acknowledgements
+## Acknowledgements
 This code uses libraries from [covid19-sounds-kdd20](https://github.com/cam-mobsys/covid19-sounds-kdd20).
 
 For questions and comments, please contact me: aytekinayceidil@gmail.com
