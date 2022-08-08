@@ -1,5 +1,5 @@
 # **HST: Hierarchical Spectrogram Transformers**
-This repository contains the official implementation of the Hierarchical Spectrogram Transformers (HST) described in the [following paper](https://arxiv.org/abs/2207.09529):
+This repository contains the official implementation of Hierarchical Spectrogram Transformers (HST) described in the [following paper](https://arxiv.org/abs/2207.09529):
 
 Aytekin, I., Dalmaz, O., Gonc, K., Ankishan, H., Saritas, E.U., Bagci, U., Celik, H., & Çukur, T. (2022). COVID-19 Detection from Respiratory Sounds with Hierarchical Spectrogram Transformers. ArXiv, abs/2207.09529.
 
