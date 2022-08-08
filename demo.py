@@ -1,23 +1,36 @@
 #demo
 
 from model import hst_model as Model
-from train import Net
 import torch
 import librosa
 import argparse
 from matplotlib import pyplot as plt
 from PIL import Image
 import torchvision
+import torchvision.transforms as T
+import torch.nn as nn
+import warnings
+warnings.simplefilter("ignore")
+
+class Net(nn.Module):
+    def __init__(self, model):
+        super().__init__()
+        self.model = model
+    
+    def forward(self, xb):
+        return self.model(xb)
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("--audio_path", type=str, default='', help="audio path")
 args = parser.parse_args()
 
+print("Configure model and load weights...")
 hst_model = Model.HSTModel(d=96, num_blocks=[1,1,9,1], num_attention_heads=[3,6,12,24])
 hst_model = Net(hst_model)
 hst_model.load_state_dict(torch.load('./trained_hst.pth'))
 hst_model.eval()
 
+print("Convert audio file to spectrogram...")
 #convert the audio of a cough/breath to spectrogram
 cmap = plt.get_cmap('gray')
 plt.figure(figsize=(8,8))
@@ -42,9 +55,10 @@ trms = T.Compose([
                         T.Normalize([0.5], [0.5], [0.5])
                         ])
 test_input = trms(img)
-test_input = test_input.unsqueeze(0).cuda() 
+test_input = test_input.unsqueeze(0)
 test_output = hst_model(test_input)
 prediction = torch.argmax(test_output,dim=1)
+print("Test output: ")
 if prediction == 1:
   print("healthy")
 else:
