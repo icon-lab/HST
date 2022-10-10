@@ -67,6 +67,29 @@ python3 demo.py --audio_path "sample_resp_sound"
 ```
 Result is printed as "healthy" or "covid".
 
+# Citation
+You are encouraged to modify/distribute this code. However, please acknowledge this code and cite the paper appropriately.
+```
+@misc{hst,
+  doi = {10.48550/ARXIV.2207.09529},
+  
+  url = {https://arxiv.org/abs/2207.09529},
+  
+  author = {Aytekin, Idil and Dalmaz, Onat and Gonc, Kaan and Ankishan, Haydar and Saritas, Emine U and Bagci, Ulas and Celik, Haydar and Cukur, Tolga},
+  
+  keywords = {Sound (cs.SD), Machine Learning (cs.LG), Audio and Speech Processing (eess.AS), FOS: Computer and information sciences, FOS: Computer and information sciences, FOS: Electrical engineering, electronic engineering, information engineering, FOS: Electrical engineering, electronic engineering, information engineering},
+  
+  title = {COVID-19 Detection from Respiratory Sounds with Hierarchical Spectrogram Transformers},
+  
+  publisher = {arXiv},
+  
+  year = {2022},
+  
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+
+```
+
 ## Acknowledgements
 This code uses libraries from [covid19-sounds-kdd20](https://github.com/cam-mobsys/covid19-sounds-kdd20).
 
